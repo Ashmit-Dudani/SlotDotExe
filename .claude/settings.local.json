@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -X POST https://slotdotexe.onrender.com/api/auth/signup -H \"Content-Type: application/json\" -d '{\"\"\"\"name\"\"\"\":\"\"\"\"Test User\"\"\"\",\"\"\"\"email\"\"\"\":\"\"\"\"testuser@example.com\"\"\"\",\"\"\"\"password\"\"\"\":\"\"\"\"test123\"\"\"\",\"\"\"\"role\"\"\"\":\"\"\"\"student\"\"\"\",\"\"\"\"branch\"\"\"\":\"\"\"\"cse\"\"\"\",\"\"\"\"batch\"\"\"\":\"\"\"\"2021\"\"\"\"}')",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjllN2Q4NjU4ZWE0ZmMyOThiMDAyZGM0Iiwicm9sZSI6InN0dWRlbnQifSwiaWF0IjoxNzc2ODAyMzQ2LCJleHAiOjE3NzY4MjAzNDZ9.6A1XMDTfD5EptnmauXWOAmcG2v3iy7Uixh1F8Iv8Mic\")",
+      "Bash(curl -s -H \"Authorization: Bearer $TOKEN\" https://slotdotexe.onrender.com/api/auth/profile)",
+      "Bash(npm run:*)",
+      "Bash(pkill -f \"vite\")"
+    ]
+  }
+}

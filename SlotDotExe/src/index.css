@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+/* Override Tailwind v4 default colors for Light Mode */
+:root:not(.dark) {
+  --color-white: #F0F9FF; /* Cards and elements background (sky-50) */
+  --color-zinc-50: #E0F2FE; /* Main background (sky-100) */
+  --color-zinc-100: #BAE6FD; /* Hover backgrounds (sky-200) */
+  --color-zinc-200: #7DD3FC; /* Borders (sky-300) */
+  --color-zinc-300: #38BDF8; /* sky-400 */
+  --color-zinc-400: #3B82F6; /* blue-500 */
+  --color-zinc-500: #2563EB; /* blue-600 */
+  --color-zinc-600: #1D4ED8; /* blue-700 */
+  --color-zinc-700: #1E40AF; /* blue-800 */
+  --color-zinc-800: #1E3A8A; /* blue-900 */
+  --color-zinc-900: #172554; /* blue-950 */
+  
+  --color-sky-400: #3B82F6; /* Make sky accents dark blue in light mode too */
+  --color-sky-500: #2563EB;
+}
+
+/* ================================================
+   SlotDotExe Design System
+   Minimal Apple-like + Blue/Teal + Bento Grid
+   ================================================ */
+
+:root {
+  /* Typography */
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+
+  /* Color Palette - Light Blue & Dark Blue (Light Mode) */
+  --color-bg: #E0F2FE;
+  --color-bg-elevated: #F0F9FF;
+  --color-bg-muted: #BAE6FD;
+  --color-text: #172554;
+  --color-text-secondary: #1E3A8A;
+  --color-text-muted: #1E40AF;
+  --color-primary: #1D4ED8;
+  --color-primary-light: #3B82F6;
+  --color-primary-subtle: #DBEAFE;
+  --color-border: #7DD3FC;
+  --color-border-hover: #38BDF8;
+  --color-success: #059669;
+  --color-success-subtle: #ECFDF5;
+  --color-error: #DC2626;
+  --color-error-subtle: #FEF2F2;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-card-hover: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.03);
+  --shadow-elevated: 0 10px 25px rgba(0,0,0,0.06), 0 4px 10px rgba(0,0,0,0.04);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Bento Card System */
+.bento-card {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  transition: all var(--transition-normal);
+}
+
+.bento-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Form Inputs - Apple-like */
+.input-apple {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-family: var(--font-body);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.input-apple::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input-apple:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-muted);
+}
+
+/* Tags / Badges */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 100px;
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+/* Dark mode styles */
+.dark {
+  --color-bg: #000000;
+  --color-bg-elevated: #18181b;
+  --color-bg-muted: #27272a;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-primary: #38bdf8;
+  --color-primary-light: #7dd3fc;
+  --color-primary-subtle: rgba(56, 189, 248, 0.15);
+  --color-border: #3f3f46;
+  --color-border-hover: #52525b;
+  --color-success: #10b981;
+  --color-success-subtle: rgba(16, 185, 129, 0.15);
+  --color-error: #ef4444;
+  --color-error-subtle: rgba(239, 68, 68, 0.15);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-card-hover: 0 4px 6px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+  --shadow-elevated: 0 10px 25px rgba(0,0,0,0.4), 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Dark mode body styles */
+.dark body {
+  background-color: #000000;
+  color: #f1f5f9;
+}
+
+.dark .input-apple {
+  background: #18181b;
+  border-color: #3f3f46;
+  color: #f1f5f9;
+}
+
+.dark .input-apple:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.dark .bento-card {
+  background: #18181b;
+  border-color: #3f3f46;
+}
+
+/* Ensure dark mode text inputs work */
+.dark input,
+.dark select,
+.dark textarea {
+  color: #f1f5f9;
+}
+
+.dark ::placeholder {
+  color: #71717a;
+}
